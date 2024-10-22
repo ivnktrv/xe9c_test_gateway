@@ -18,6 +18,12 @@ internal class Program
             }
         }
         string[] ips = getIPs.ToArray();
+        Console.WriteLine("##### СПИСОК IP #####\n");
+        for (int i = 0; i < ips.Length; i++)
+        {
+            Console.WriteLine($"[{i}] {ips[i]}");
+        }
+        
         Xe9c_gateway x = new(ips[0], 5050);
         Console.WriteLine(x.GatewayInfo());
         Socket s = x.CreateGateway();
