@@ -24,7 +24,7 @@ internal class Program
             Console.WriteLine($"[{i}] {ips[i]}");
         }
         
-        Xe9c_gateway x = new(ips[0], 5050);
+        Xe9c_gateway x = new(ips[1], 5050);
         Console.WriteLine(x.GatewayInfo());
         Socket s = x.CreateGateway();
 
