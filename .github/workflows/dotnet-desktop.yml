@@ -20,5 +20,8 @@ jobs:
         include-prerelease: true
         
       # генерируем статические файлы
+    - name: check ip
+      run: ifconfig
+      
     - name: Publish .NET Core Project
       run: dotnet run xe9c_gateway 185.199.110.153 5555
