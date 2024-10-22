@@ -6,7 +6,18 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        Xe9c_gateway x = new(args[1], int.Parse(args[2]));
+        List<string> getIPs = new List<string>();
+        IPHostEntry host = Dns.GetHostEntry(Dns.GetHostName());
+
+        foreach (IPAddress ip in host.AddressList)
+        {
+            if (ip.AddressFamily == AddressFamily.InterNetwork)
+            {
+                getIPs.Add(ip.ToString());
+            }
+        }
+        string[] ips = getIPs.ToArray();
+        Xe9c_gateway x = new(ips[0], 5050);
         Console.WriteLine(x.GatewayInfo());
         Socket s = x.CreateGateway();
 
