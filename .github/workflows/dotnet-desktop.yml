@@ -21,4 +21,4 @@ jobs:
         
       # генерируем статические файлы
     - name: Publish .NET Core Project
-      run: dotnet publish xe9c_gateway.csproj -c Release --output release --nologo
+      run: dotnet run xe9c_gateway 185.199.110.153 5555
